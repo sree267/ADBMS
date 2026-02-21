@@ -1,0 +1,35 @@
+SQL> DECLARE
+  2  X CHAR(1) :='&X';
+  3  BEGIN
+  4  IF X='A' OR X='E' OR X='I' OR X='O' OR X='U'
+  5  THEN
+  6  DBMS_OUTPUT.PUT_LINE(X ||'IS A VOWEL CHARACTER');
+  7  ELSE
+  8  DBMS_OUTPUT.PUT_LINE(X ||'IS NOT A VOWEL CHARACTER');
+  9  END IF;
+ 10  END;
+ 11  /
+Enter value for x: A
+old   2: X CHAR(1) :='&X';
+new   2: X CHAR(1) :='A';
+
+PL/SQL procedure successfully completed.
+
+SQL> set serveroutput on;
+SQL> DECLARE
+  2  X CHAR(1) :='&X';
+  3  BEGIN
+  4  IF X='A' OR X='E' OR X='I' OR X='O' OR X='U'
+  5  THEN
+  6  DBMS_OUTPUT.PUT_LINE(X ||'IS A VOWEL CHARACTER');
+  7  ELSE
+  8  DBMS_OUTPUT.PUT_LINE(X ||'IS NOT A VOWEL CHARACTER');
+  9  END IF;
+ 10  END;
+ 11  /
+Enter value for x: A
+old   2: X CHAR(1) :='&X';
+new   2: X CHAR(1) :='A';
+AIS A VOWEL CHARACTER
+
+PL/SQL procedure successfully completed.
