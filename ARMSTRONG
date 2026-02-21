@@ -1,0 +1,52 @@
+
+SQL> DECLARE
+  2  N NUMBER := &N;
+  3  SUMS NUMBER :=0;
+  4  REM NUMBER;
+  5  TEMP NUMBER :=N;
+  6  BEGIN
+  7  WHILE N>0 LOOP
+  8  REM :=MOD(N,10);
+  9  SUMS :=SUMS+REM*REM*REM;
+ 10  N :=TRUNC(N/10);
+ 11  END LOOP;
+ 12  IF SUMS =TEMP THEN
+ 13  DBMS_OUTPUT.PUT_LINE(TEMP ||'IS ARMSTRONG');
+ 14  ELSE
+ 15  DBMS_OUTPUT.PUT_LINE(TEMP ||'IS NOT ARMSTRONG');
+ 16  END IF;
+ 17  END;
+ 18
+ 19  /
+Enter value for n: 121
+old   2: N NUMBER := &N;
+new   2: N NUMBER := 121;
+121IS NOT ARMSTRONG
+
+PL/SQL procedure successfully completed.
+
+SQL> SET SERVEROUTPUT ON;
+SQL> DECLARE
+  2  N NUMBER := &N;
+  3  SUMS NUMBER :=0;
+  4  REM NUMBER;
+  5  TEMP NUMBER :=N;
+  6  BEGIN
+  7  WHILE N>0 LOOP
+  8  REM :=MOD(N,10);
+  9  SUMS :=SUMS+REM*REM*REM;
+ 10  N :=TRUNC(N/10);
+ 11  END LOOP;
+ 12  IF SUMS =TEMP THEN
+ 13  DBMS_OUTPUT.PUT_LINE(TEMP ||'IS ARMSTRONG');
+ 14  ELSE
+ 15  DBMS_OUTPUT.PUT_LINE(TEMP ||'IS NOT ARMSTRONG');
+ 16  END IF;
+ 17  END;
+ 18  /
+Enter value for n: 121
+old   2: N NUMBER := &N;
+new   2: N NUMBER := 121;
+121IS NOT ARMSTRONG
+
+PL/SQL procedure successfully completed.                 153 IS ARMSTRONG
